@@ -1,17 +1,3 @@
 <%= render 'site/header' %>
-
-<div class="converter">
-  <label for="my-bank">Select your Indo bank:</label>
-  <select name="my-bank">
-    <option value="bni">Bank Negara Indonesia (BNI)</option>
-    <option value="bca">Bank Central Asia (BCA)</option>
-  </select>
-  <br>
-  <label for="my-statement">Upload your statement:</label>
-  <input type="file" id="my-statement" name="filename">
-  <br>
-  <button type="submit" name="button">convert to YNAB-ready CSV</button>
-</div>
-
-<%= render 'site/faq' %>
+<%= render 'site/converter' %>
 <%= render 'site/footer' %>

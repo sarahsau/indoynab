@@ -2,7 +2,7 @@ class SiteController < ApplicationController
   def index
   end
 
-  def statement_instruction
-    render 'site/statement_instruction'
+  def faq
+    render 'site/faq'
   end
 end
