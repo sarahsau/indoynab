@@ -3,6 +3,20 @@ a {
   @apply text-red-900;
 }
 
-
 @import "tailwindcss/components";
+
+.custom-upload {
+  content: 'browse';
+}
 @import "tailwindcss/utilities";
+
+@layer base {
+  @font-face {
+    font-family: 'inter';
+    src: url('./fonts/Inter-regular-400.ttf');
+  }
+
+  body {
+    font-family: 'inter';
+  }
+}

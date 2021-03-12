@@ -1,27 +1,37 @@
-<div class="py-4 text-gray-800">
-  <h3 class="text-2xl text-gray-800 py-1">FAQ</h3>
-  <ol>
-    <li>
-      <strong class="text-gray-600">How to download the bank statement?</strong><br>
-      Assuming you have access to the internet banking system (i.e. klikBCA, BNI Internet Banking, etc.), follow <%= link_to "these bank-specific instructions", statement_instruction_path %> to get the statement. Otherwise, request an internet banking credential by visiting your bank's nearest branch office.
-    </li><br>
-    <li>
-      <strong class="text-gray-600">Which banks are currently supported by indoynab? </strong><br>
-      So far: Bank Negara Indonesia (BNI), Bank Central Asia (BCA).
-    </li><br>
-    <li>
-      <strong class="text-gray-600">[insert Indonesian bank name] is not supported!</strong><br>
-      I'll be glad to help build the converter for you! All I need is a sample of the bank's statement - you can remove personal information (name, account no) from it. Please open an issue in <a href="https://github.com/sarahsau/indoynab">Github</a> and share a sample of the bank statement that need to be converted.
-    </li><br>
-    <li>
-      <strong class="text-gray-600">Help! YNAB doesn't accept the converted CSV/I found an error/I'm stuck </strong><br>
-       Whoops! Please open an issue in <a href="https://github.com/sarahsau/indoynab">Github</a> and share all the files and error details.
-    </li><br>
-    <li>
-      <strong class="text-gray-600">What is YNAB, by the way?</strong><br>
-      You Need a Budget (YNAB) is a popular personal budgeting app. visit <a href="https://www.youneedabudget.com/">their site</a> for more information.
-    </li>
-  </ol>
+<div class="xl:flex">
+  <%= render 'site/header' %>
+
+  <div class="p-4 bg-gray-50 text-gray-800 xl:w-2/3">
+    <h3 class="text-2xl text-gray-800 py-1">FAQ</h3>
+    <ol>
+      <li>
+        <strong class="text-gray-600">How to download the bank statement?</strong><br>
+
+        BCA:
+        BNI:
+
+        The assumption is that you already have access to your bank's internet banking system (i.e. klikBCA, BNI Internet Banking, etc.). If you don't, request an internet banking credential by visiting your bank's nearest branch office.
+      </li><br>
+      <li>
+        <strong class="text-gray-600">Which banks are currently supported by indoynab? </strong><br>
+        So far: Bank Negara Indonesia (BNI), Bank Central Asia (BCA).
+      </li><br>
+      <li>
+        <strong class="text-gray-600">[insert Indonesian bank name] is not supported!</strong><br>
+        I'll be glad to help build the converter for you! All I need is a sample of the bank's statement - you can remove personal information (name, account no) from it. Please open an issue in <a href="https://github.com/sarahsau/indoynab">Github</a> and share a sample of the bank statement that need to be converted.
+      </li><br>
+      <li>
+        <strong class="text-gray-600">Help! YNAB doesn't accept the converted CSV/I found an error/I'm stuck </strong><br>
+         Whoops! Please open an issue in <a href="https://github.com/sarahsau/indoynab">Github</a> and share all the files and error details.
+      </li><br>
+      <li>
+        <strong class="text-gray-600">What is YNAB, by the way?</strong><br>
+        You Need a Budget (YNAB) is a popular personal budgeting app. visit <a href="https://www.youneedabudget.com/">their site</a> for more information.
+      </li>
+    </ol>
+    <br>
+    <span class="underline"><%= link_to ' Back to home', root_path %></span>
+  </div>
 </div>
 
-<%= link_to 'Back to home', root_path %>
+<%= render 'site/footer' %>

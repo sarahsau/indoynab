@@ -1,31 +1,35 @@
 <div class="xl:w-2/3">
-  <div class="flex-col bg-gray-100 rounded p-2 min-w-full shadow-md inline-block text-center xl:shadow-none xl:rounded-none xl:text-left xl:p-4">
+  <div class="flex-col bg-gray-50 rounded p-2 min-w-full inline-block text-center xl:text-left xl:p-4">
 
     <div class="p-4">
-      <label for="my-bank" class="font-semibold text-ynab-blue uppercase">Select bank </label><br>
-      <select name="my-bank" class="py-2">
+      <label for="bank"></label>
+      <select id="bank" name="bank" class="p-2 text-ynab-blue bg-gray-50  focus:outline-none">
+        <option value="none" selected disabled hidden>Select a bank</option>
         <option value="bni">Bank Negara Indonesia (BNI)</option>
         <option value="bca">Bank Central Asia (BCA)</option>
-      </select><br>
-        <div class="py-1">
-          <small class="text-gray-600">Can't find your bank? <a href="https://github.com/sarahsau/indoynab">Request on Github</a></small>
-        </div>
+      </select>
+      <br>
+      <div class="py-1">
+        <small class="text-gray-500">Can't find your bank? Open a request on <a href="https://github.com/sarahsau/indoynab"> Github</a></small>
+      </div>
     </div>
     <br>
 
     <div class="p-4">
-      <label for="my-statement" class="font-semibold text-ynab-blue uppercase ">Choose statement file</label><br>
-      <input type="file" id="my-statement" name="filename" class="py-2"><br>
+      <div class="">
+        <label for="file" class="text-ynab-blue rounded border border-ynab-blue p-2 px-4 cursor-pointer hover:bg-blue-50">Select a file</label>
+        <input type="file" class="hidden text-ynab-blue focus:outline-none" id="file">
+      </div>
       <div class="py-1">
-        <small class="text-gray-600">How to obtain one? visit <%= link_to "FAQ", faq_path %> </small>
+        <small class="text-gray-500">How to obtain one? visit <%= link_to "FAQ", faq_path %> </small>
       </div>
     </div>
 
     <br>
     <div class="pb-4 pl-4">
-      <button class="bg-ynab-blue font-semibold text-white rounded p-2 px-16 uppercase" type="submit" name="button">convert</button><br>
+      <button class="bg-ynab-blue font-bold text-white rounded p-2 px-8 uppercase border-b-4 border-red-900 tracking-wider hover:bg-blue-500 active:outline-white type="submit" name="button">convert</button><br>
       <div class="py-1">
-        <small class="text-gray-600">YNAB-ready file will be automatically downloaded. </small>
+        <small class="text-gray-500">YNAB-ready file will be automatically downloaded</small>
       </div>
     </div>
   </div>
