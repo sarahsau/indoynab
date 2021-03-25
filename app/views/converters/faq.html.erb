@@ -1,16 +1,12 @@
 <div class="xl:flex">
-  <%= render 'site/header' %>
+  <%= render 'converters/header' %>
 
-  <div class="p-4 bg-gray-50 text-gray-800 xl:w-2/3">
-    <h3 class="text-2xl text-gray-800 py-1">FAQ</h3>
+  <div class="p-6 bg-gray-50 text-gray-800 text-sm">
+    <h3 class="text-lg text-gray-800 py-3 uppercase">FAQ</h3>
     <ol>
       <li>
         <strong class="text-gray-600">How to download the bank statement?</strong><br>
-
-        BCA:
-        BNI:
-
-        The assumption is that you already have access to your bank's internet banking system (i.e. klikBCA, BNI Internet Banking, etc.). If you don't, request an internet banking credential by visiting your bank's nearest branch office.
+        See <a href="#get-statement">Getting Bank Statements</a>. The assumption is that you already have access to your bank's internet banking system (i.e. klikBCA, BNI Internet Banking, etc.). If you don't, request an internet banking credential by visiting your bank's nearest branch office.
       </li><br>
       <li>
         <strong class="text-gray-600">Which banks are currently supported by indoynab? </strong><br>
@@ -30,8 +26,29 @@
       </li>
     </ol>
     <br>
+
+    <div class="pt-6">
+      <h3 class="text-lg text-gray-800 py-3 uppercase" id="get-statement">Getting bank statements</h3>
+
+      <strong class="text-gray-600">Bank Negara Indonesia (BNI)</strong>
+        <ul>
+          <li>- Login to BNI Internet Banking</li>
+          <li>- Go to Rekening > Mutasi Tabungan dan Giro</li>
+          <li>- Select your account and put your query criteria, then select "Histori Transaksi"</li>
+          <li>- Download to a PDF file</li>
+        </ul>
+      <br>
+        <strong class="text-gray-600">Bank Central Asia (BCA)</strong><br>
+        <ul>
+          <li>- Login to klikBCA</li>
+          <li>- Go to Account Information > Account Statement</li>
+          <li>- Select the period of transactions that you want to import to YNAB</li>
+          <li>- Click "Statement Download", that will download the statement file in csv format.</li>
+        </ul>
+    </div>
+    <br>
     <span class="underline"><%= link_to ' Back to home', root_path %></span>
   </div>
 </div>
 
-<%= render 'site/footer' %>
+<%= render 'converters/footer' %>

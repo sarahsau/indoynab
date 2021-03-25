@@ -1,0 +1,29 @@
+<div class="xl:w-2/3">
+  <div class="flex-col bg-gray-50 rounded p-2 min-w-full inline-block text-center xl:text-left xl:p-4">
+
+    <%= form_for @converter, method: :post do |f|%>
+
+      <div class="p-4">
+        <h2 class=" pt-4 uppercase text-red-900 font-bold text-sm pb-4">Select your bank</h2>
+        <%= f.select :bank, [["BNI - Bank Negara Indonesia", "bni"], ["BCA - Bank Central Asia", "bca"]], {}, class: 'p-2 text-red-900 bg-gray-50 rounded border border-red-900 hover:bg-blue-50 pr-28 focus:outline-none' %>
+        <div class="py-1">
+          <small class="text-gray-500">Can't find your bank? Open a request on <a href="https://github.com/sarahsau/indoynab"> Github</a></small>
+        </div>
+      </div>
+      <br>
+
+      <div class="p-4">
+        <h2 class="uppercase text-red-900 font-bold text-sm pb-4">Select your bank statement</h2>
+        <%= f.file_field :statement, accept: 'text/csv', class: 'text-red-900 rounded border border-red-900 p-2 cursor-pointer hover:bg-blue-50 focus:outline-none' %>
+        <div class="py-1">
+          <small class="text-gray-500">How to obtain one? visit <%= link_to "FAQ", faq_path %> </small>
+        </div>
+      </div>
+
+      <div class="p-4 pb-4">
+        <%= f.submit :convert, class: 'bg-red-800 font-bold text-white rounded p-2 px-8 uppercase tracking-wider hover:bg-red-900 active:outline-white cursor-pointer' %>
+          <div class="py-1">
+            <small class="text-gray-500">YNAB-ready file will be automatically downloaded</small>
+          </div>
+      </div>
+    <% end %>

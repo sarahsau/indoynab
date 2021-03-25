@@ -1,6 +1,6 @@
 @import "tailwindcss/base";
 a {
-  @apply text-red-900;
+  @apply text-ynab-blue hover:text-blue-900;
 }
 
 @import "tailwindcss/components";
