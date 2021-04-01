@@ -1,7 +1,7 @@
 require 'csv'
 require 'fileutils'
 
-class IndoYnab
+class BankAll 
 
   def pdf_check?
     self == "application/pdf"

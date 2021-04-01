@@ -1,7 +1,7 @@
-require_relative 'indo_class'
+require_relative 'bank_all'
 require 'csv'
 
-class BankCentralAsia < IndoYnab
+class BankCentralAsia < BankAll
 	attr_accessor :input, :year, :output, :errors
 
 	def initialize(input, year, output)

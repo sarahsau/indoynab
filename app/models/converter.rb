@@ -1,7 +1,7 @@
-class Converter < ActiveRecord::Base
+class Converter < ApplicationRecord
 
-  require_relative 'lib/bca'
-  require_relative 'lib/bni'
+  require_relative 'bank_bca'
+  require_relative 'bank_bni'
 
 
   def run_conversion
@@ -18,7 +18,7 @@ class Converter < ActiveRecord::Base
       statement.bca_processing
       statement.assign_payee
       return statement.output_name
-      
+
     when /bni/i
       statement = BankNegaraIndonesia.new(file, output)
 

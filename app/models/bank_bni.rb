@@ -1,8 +1,8 @@
-require_relative 'indo_class'
+require_relative 'bank_all'
 require 'csv'
 require 'pdf-reader'
 
-class BankNegaraIndonesia < IndoYnab
+class BankNegaraIndonesia < BankAll
 	attr_accessor :input, :output, :errors
 
 	def initialize(input, output)
