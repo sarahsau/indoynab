@@ -1,4 +1,4 @@
-# indoynab |  [indoynab.github.io](herokusite)
+# indoynab |  [sarahsau.github.io/indoynab](https://blueberry-surprise-28648.herokuapp.com/)
 
 Convert your Indonesian bank statements into CSV files compatible with You Need A Budget (YNAB) app.
 
