@@ -14,16 +14,23 @@
 
       <div class="p-4">
         <h2 class="uppercase text-red-900 font-bold text-sm pb-4">Select your bank statement</h2>
-        <%= f.file_field :statement, accept: 'text/csv', class: 'text-red-900 rounded border border-red-900 p-2 cursor-pointer hover:bg-blue-50 focus:outline-none' %>
+        <%= f.file_field :statement, accept: '.csv, .pdf', class: 'text-red-900 rounded border border-red-900 p-2 cursor-pointer hover:bg-blue-50 focus:outline-none' %>
+
+        <% flash.each do |type, msg| %>
+        <div class="text-red-600 text-xs xl:text-left">
+          <%= msg %>
+        </div>
+        <% end  %>
+
         <div class="py-1">
-          <small class="text-gray-500">How to obtain one? visit <%= link_to "FAQ", faq_path %> </small>
+          <small class="text-gray-500">How to obtain the statement? visit <%= link_to "FAQ", faq_path %> </small>
         </div>
       </div>
 
       <div class="p-4 pb-4">
         <%= f.submit :convert, class: 'bg-red-800 font-bold text-white rounded p-2 px-8 uppercase tracking-wider hover:bg-red-900 active:outline-white cursor-pointer' %>
           <div class="py-1">
-            <small class="text-gray-500">YNAB-ready file will be automatically downloaded</small>
+            <small class="text-gray-500">Refresh page to convert another statement  </small>
           </div>
       </div>
     <% end %>

@@ -3,11 +3,11 @@ require 'csv'
 require 'pdf-reader'
 
 class BankNegaraIndonesia < IndoYnab
-	attr_accessor :input, :output
+	attr_accessor :input, :output, :errors
 
 	def initialize(input, output)
 		@input = input
-		@output = output 
+		@output = output
 	end
 
 	def bni_processing

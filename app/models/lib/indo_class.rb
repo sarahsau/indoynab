@@ -2,6 +2,15 @@ require 'csv'
 require 'fileutils'
 
 class IndoYnab
+
+  def pdf_check?
+    self == "application/pdf"
+  end
+
+  def csv_check?
+    self == "application/csv"
+  end
+
 	def output_file
 		CSV.open(self.output, 'wb') do |csv|
 			csv << ["Date", "Payee", "Memo", "Amount"]

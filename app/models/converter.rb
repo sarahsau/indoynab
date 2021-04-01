@@ -3,6 +3,7 @@ class Converter < ActiveRecord::Base
   require_relative 'lib/bca'
   require_relative 'lib/bni'
 
+
   def run_conversion
     bank            = self[:bank]
     file            = self[:statement]
@@ -17,7 +18,7 @@ class Converter < ActiveRecord::Base
       statement.bca_processing
       statement.assign_payee
       return statement.output_name
-
+      
     when /bni/i
       statement = BankNegaraIndonesia.new(file, output)
 

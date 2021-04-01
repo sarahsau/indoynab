@@ -2,7 +2,7 @@ require_relative 'indo_class'
 require 'csv'
 
 class BankCentralAsia < IndoYnab
-	attr_accessor :input, :year, :output
+	attr_accessor :input, :year, :output, :errors
 
 	def initialize(input, year, output)
 		@input = input
