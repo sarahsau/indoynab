@@ -57,3 +57,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem "tailwindcss-rails", "~> 0.3.3"
 gem "pdf-reader",  ">= 2.2.1"
+gem "mimemagic", "~> 0.3.6"
