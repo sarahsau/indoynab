@@ -53,6 +53,6 @@ class ConvertersController < ApplicationController
       send_data(f.read, filename: 'indoynab.csv', type: 'text/csv')
     end
 
-    # File.delete(file_path)
+    File.delete(file_path)
   end
 end
