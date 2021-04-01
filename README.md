@@ -17,6 +17,6 @@ If you program, you're welcome to create a pull request to add a new bank yourse
 - **v0.1** | initial Ruby script for converting bank statements (deprecated)
 
 ### Contributors
-[Sarah S]() - owner
-[Keisuke Inaba](https://github.com/kei178) - pdf conversion example
-[Wesley Couch](https://github.com/wesmcouch) - csv conversion example
+- [Sarah S](https://github.com/sarahsau) - owner
+- [Keisuke Inaba](https://github.com/kei178) - pdf conversion example
+- [Wesley Couch](https://github.com/wesmcouch) - csv conversion example
