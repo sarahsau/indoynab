@@ -14,13 +14,14 @@ class ConvertersController < ApplicationController
     if converter_params[:statement].nil?
       flash.now[:alert] = "Error: no statement provided"
       render action: "index"
-    # elsif converter_params[:statement].file_check
-    #   flash.now[:alert] = "Error: wrong file type"
-    #   render action: "index"
+    # elsif !(format_ok?(converter_params[:statement]))
+    #  flash.now[:alert] = "Error: wrong file type"
+    #  render action: "index"
     else
       result      = @converter.run_conversion
       file_path   = Rails.root.join('public', 'output', result)
 
+      flash.now[:success] = "Conversion successful!"
       stream_then_delete_statement(file_path)
     end
   end
@@ -35,16 +36,16 @@ class ConvertersController < ApplicationController
     params.require(:converter).permit(:bank, :statement)
   end
 
-  def file_check
+  def format_ok?(statement_params)
     pdf_statement = [ "bni" ]
     csv_statement = [ "bca" ]
 
-    if pdf_statement.include? converter_params[:bank]
-      self.content_type.pdf_check?
-    elsif csv_statement.include? converter_params[:bank]
-      self.content_type.csv_check?
+    if pdf_statement.include? statement_params
+      p statement_params
+    elsif csv_statement.include? statement_params
+      statement_params.content_type.csv_check?
     else
-      exit(0)
+      return
     end
   end
 
