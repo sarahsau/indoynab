@@ -13,7 +13,6 @@ class ConvertersController < ApplicationController
 
     if converter_params[:statement].nil?
       flash.now[:alert] = "Error: no statement provided"
-      render action: "index"
     # elsif !(format_ok?(converter_params[:statement]))
     #  flash.now[:alert] = "Error: wrong file type"
     #  render action: "index"
