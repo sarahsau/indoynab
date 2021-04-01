@@ -1,6 +1,6 @@
 # indoynab |  [sarahsau.github.io/indoynab](https://blueberry-surprise-28648.herokuapp.com/)
 
-Convert your Indonesian bank statements into CSV files compatible with You Need A Budget (YNAB) app.
+A converter for your Indonesian bank statements into CSV files compatible with You Need A Budget (YNAB) app.
 
 No data is stored; your statement is automatically deleted after conversion.
 
