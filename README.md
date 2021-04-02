@@ -1,11 +1,10 @@
 # indoynab |  [sarahsau.github.io/indoynab](https://blueberry-surprise-28648.herokuapp.com/)
 
-A YNAB web-app converter for your Indonesian bank statements. 
-Currently covering: BCA, BNI. 
+An online, no-fuss YNAB converter for your Indonesian bank statements. 
+Currently covering: Bank Central Asia (BCA), Bank Negara Indonesia (BNI).
 
-- No installation required
-- Unlinked to any of your credential by design to minimize security risk
-- No file is stored in the serverl  your statement is automatically deleted after conversion. 
+As easy as 123: Select Bank > Select Statement > Convert. 
+No installation required, no credential needed, no file stored. 
 
 
 ### My bank isn't in **indoynab** yet, can you include it?
