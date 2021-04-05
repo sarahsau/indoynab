@@ -20,5 +20,5 @@ If you program, you're welcome to create a pull request to add a new bank yourse
 
 ### Contributors
 - [Sarah S](https://github.com/sarahsau) - owner
-- [Keisuke Inaba](https://github.com/kei178) - pdf conversion example
+- [Keisuke Inaba](https://github.com/kei178) - pdf conversion gem
 - [Wesley Couch](https://github.com/wesmcouch) - csv conversion example
