@@ -1,0 +1,15 @@
+{
+  "application.js": "/packs/js/application-279791e129fe12a704ad.js",
+  "application.js.map": "/packs/js/application-279791e129fe12a704ad.js.map",
+  "entrypoints": {
+    "application": {
+      "js": [
+        "/packs/js/application-279791e129fe12a704ad.js"
+      ],
+      "js.map": [
+        "/packs/js/application-279791e129fe12a704ad.js.map"
+      ]
+    }
+  },
+  "media/stylesheets/fonts/Inter-regular-400.ttf": "/packs/media/stylesheets/fonts/Inter-regular-400-f958c681d7293226a31914e27c15cc83.ttf"
+}
