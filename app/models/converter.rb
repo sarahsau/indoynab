@@ -2,7 +2,7 @@ class Converter < ApplicationRecord
 
   require_relative 'bank_bca'
   require_relative 'bank_bni'
-
+  require_relative 'bank_btpn_jenius'
 
   def run_conversion
     bank            = self[:bank]
@@ -31,7 +31,7 @@ class Converter < ApplicationRecord
       statement = BtpnJenius.new(file, output)
 
       statement.output_file
-      statement.bni_processing
+      statement.btpn_processing
       statement.assign_payee
       return statement.output_name
     end
