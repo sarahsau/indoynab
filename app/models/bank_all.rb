@@ -1,7 +1,7 @@
 require 'csv'
 require 'fileutils'
 
-class BankAll 
+class BankAll
 
   def pdf_check?
     self == "application/pdf"
@@ -47,6 +47,15 @@ class BankAll
 						payee_column << "BNI" unless !payee_column.empty?
 					end
 				end
+
+      elsif self.class == BtpnJenius
+        btpn_jenius_activities = ['Insufficient funds fee', 'Tax on interest', 'Interest']
+
+        btpn_jenius_activities.each do |activity|
+          if memo_column.match(/\b#{activity}\b/i)
+            payee_column << "BTPN Jenius" unless !payee_column.empty?
+          end
+        end
 
 			else
 				next

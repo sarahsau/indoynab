@@ -36,7 +36,7 @@ class ConvertersController < ApplicationController
   end
 
   def format_ok?(statement_params)
-    pdf_statement = [ "bni" ]
+    pdf_statement = [ "bni", "btpn_jenius" ]
     csv_statement = [ "bca" ]
 
     if pdf_statement.include? statement_params

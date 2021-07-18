@@ -94,8 +94,6 @@ class BankNegaraIndonesia < BankAll
 		      CSV.open(self.output, "a+") do |csv|
 		        csv << rows
           end
-
-
 		    end
 		  end
 		end

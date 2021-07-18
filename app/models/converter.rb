@@ -26,6 +26,14 @@ class Converter < ApplicationRecord
       statement.bni_processing
       statement.assign_payee
       return statement.output_name
+
+    when /btpn_jenius/i
+      statement = BtpnJenius.new(file, output)
+
+      statement.output_file
+      statement.bni_processing
+      statement.assign_payee
+      return statement.output_name
     end
   end
 end
