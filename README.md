@@ -1,4 +1,4 @@
-# indoynab |  [sarahsau.github.io/indoynab](https://blueberry-surprise-28648.herokuapp.com/)
+# indoynab |  [sarahsau.github.io/indoynab](https://indoynab.herokuapp.com/)
 
 An online, no-fuss YNAB converter for your Indonesian bank statements.
 Currently covering: Bank Central Asia (BCA), Bank Negara Indonesia (BNI), BTPN Jenius.
