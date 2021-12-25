@@ -79,8 +79,6 @@ class BtpnJenius < BankAll
             rows[0].delete! " "
           end
 
-          p rows
-
 					# Insert transactions into the resulting CSV file.
 		      CSV.open(self.output, "a+") do |csv|
 		        csv << rows

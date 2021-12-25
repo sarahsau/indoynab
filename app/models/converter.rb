@@ -2,6 +2,7 @@ class Converter < ApplicationRecord
 
   require_relative 'bank_bca'
   require_relative 'bank_bni'
+  require_relative 'bank_bsi'
   require_relative 'bank_btpn_jenius'
 
   def run_conversion
@@ -24,6 +25,14 @@ class Converter < ApplicationRecord
 
       statement.output_file
       statement.bni_processing
+      statement.assign_payee
+      return statement.output_name
+
+    when "bsi"
+      statement = BankSyariahIndonesia.new(file, output)
+
+      statement.output_file
+      statement.bsi_processing
       statement.assign_payee
       return statement.output_name
 
