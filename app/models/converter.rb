@@ -11,7 +11,7 @@ class Converter < ApplicationRecord
     output          = "public/output/#{bank}_indoynab_#{SecureRandom.alphanumeric}.csv"
 
     case bank
-    when /bca/i
+    when "bca_csv"
       statement = BankCentralAsia.new(file, statement_year, output)
 
       statement.output_file
@@ -19,7 +19,7 @@ class Converter < ApplicationRecord
       statement.assign_payee
       return statement.output_name
 
-    when /bni/i
+    when "bni"
       statement = BankNegaraIndonesia.new(file, output)
 
       statement.output_file
@@ -27,7 +27,7 @@ class Converter < ApplicationRecord
       statement.assign_payee
       return statement.output_name
 
-    when /btpn_jenius/i
+    when "btpn_jenius"
       statement = BtpnJenius.new(file, output)
 
       statement.output_file

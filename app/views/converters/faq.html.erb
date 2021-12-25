@@ -10,7 +10,12 @@
       </li><br>
       <li>
         <strong class="text-gray-600">Which banks are currently supported by indoynab? </strong><br>
-        So far: Bank Negara Indonesia (BNI), Bank Central Asia (BCA), BTPN Jenius.
+        <ul class="list-disc list-inside">
+          <li>Bank Central Asia (BCA) -  CSV and PDF statements</li>
+          <li>Bank Negara Indonesia (BNI)</li>
+          <li>Bank Syariah Indonesia (BSI)</li>
+          <li>BTPN Jenius</li>
+        </ul>
       </li><br>
       <li>
         <strong class="text-gray-600">[insert Indonesian bank name] is not supported!</strong><br>
@@ -29,30 +34,44 @@
 
     <div class="pt-6">
       <h3 class="text-lg text-gray-800 py-3 uppercase" id="get-statement">Getting bank statements</h3>
-
-      <strong class="text-gray-600">Bank Negara Indonesia (BNI)</strong>
-        <ul>
-          <li>- Login to BNI Internet Banking</li>
-          <li>- Go to Rekening > Mutasi Tabungan dan Giro</li>
-          <li>- Select your account and put your query criteria, then select "Histori Transaksi"</li>
-          <li>- Download to a PDF file</li>
-        </ul>
-      <br>
-        <strong class="text-gray-600">Bank Central Asia (BCA)</strong><br>
-        <ul>
-          <li>- Login to klikBCA</li>
-          <li>- Go to Account Information > Account Statement</li>
-          <li>- Select the period of transactions that you want to import to YNAB</li>
-          <li>- Click "Statement Download", that will download the statement file in csv format.</li>
-        </ul>
-      <br>
-        <strong class="text-gray-600">BTPN Jenius</strong><br>
-        <ul>
-          <li>- Step 1</li>
-          <li>- Step 2</li>
-          <li>- Step 3</li>
-          <li>- Step 4</li>
-        </ul>
+        <strong class="text-gray-600">Bank Central Asia (BCA) - CSV statements </strong><br>
+          <ul class="list-inside list-decimal">
+            <li>Login to klikBCA</li>
+            <li>Go to <em>Account Information</em> > <em>Account Statement</em></li>
+            <li>Select the period of transactions that you want to import to YNAB</li>
+            <li>Click <em>Statement Download</em> to download in CSV format.</li>
+          </ul>
+        <br>
+          <strong class="text-gray-600">Bank Central Asia (BCA) - PDF statements </strong><br>
+          <ul class="list-inside list-decimal">
+            <li>Login to klikBCA</li>
+            <li>Go to <em>e-Statement</em> > <em>Savings and Giro</em></li>
+            <li>Select e-Statement period and click Download</li>
+          </ul>
+        <br>
+          <strong class="text-gray-600">Bank Negara Indonesia (BNI)</strong>
+            <ul class="list-inside list-decimal">
+              <li>Login to BNI Internet Banking</li>
+              <li>Go to <em>Rekening</em> > <em>Mutasi Tabungan dan Giro</em></li>
+              <li>Select your account and put your query criteria, then select <em>Histori Transaksi</em></li>
+              <li>Download to a PDF file</li>
+            </ul>
+        <br>
+          <strong class="text-gray-600">Bank Syariah Indonesia (BSI)</strong><br>
+          <ul class="list-inside list-decimal">
+            <li>Step 1</li>
+            <li>Step 2</li>
+            <li>Step 3</li>
+            <li>Step 4</li>
+          </ul>
+        <br>
+          <strong class="text-gray-600">BTPN Jenius</strong><br>
+          <ul class="list-inside list-decimal">
+            <li>Step 1</li>
+            <li>Step 2</li>
+            <li>Step 3</li>
+            <li>Step 4</li>
+          </ul>
     </div>
     <br>
     <span class="underline"><%= link_to ' Back to home', root_path %></span>
