@@ -6,6 +6,7 @@
       <div class="p-4">
         <h2 class=" pt-4 uppercase text-red-900 font-bold text-sm pb-4">Select your bank</h2>
         <%= f.select :bank, [["BCA - Bank Central Asia (PDF)", "bca_pdf"], ["BCA - Bank Central Asia (CSV)", "bca_csv"], ["BNI - Bank Negara Indonesia (PDF)", "bni"], ["BSI - Bank Syariah Indonesia (PDF)", "bsi"], ["BTPN Jenius (PDF)", "btpn_jenius"]], {}, class: 'p-2 text-red-900 bg-gray-50 rounded border border-red-900 hover:bg-blue-50 pr-28 focus:outline-none' %>
+
         <div class="py-1">
           <small class="text-gray-500">Can't find your bank? Open a request on <a href="https://github.com/sarahsau/indoynab"> Github</a></small>
         </div>
@@ -15,6 +16,7 @@
       <div class="p-4">
         <h2 class="uppercase text-red-900 font-bold text-sm pb-4">Select your bank statement</h2>
         <%= f.file_field :statement, accept: '.csv, .pdf', class: 'text-red-900 rounded border border-red-900 p-2 cursor-pointer hover:bg-blue-50 focus:outline-none' %>
+        <%= f.select :statement_year, [Time.zone.now.year, Time.zone.now.year - 1, Time.zone.now.year - 2], {}, class: 'p-3 text-red-900 bg-gray-50 rounded border border-red-900 hover:bg-blue-50 pr-10 focus:outline-none' %>
 
         <div class="py-1">
           <small class="text-gray-500">How to obtain the statement? visit <%= link_to "FAQ", faq_path %> </small>

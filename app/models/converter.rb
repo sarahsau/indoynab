@@ -8,7 +8,7 @@ class Converter < ApplicationRecord
   def run_conversion
     bank            = self[:bank]
     file            = self[:statement]
-    statement_year  = self[:statement_year] || "#{Time.now.year}"
+    statement_year  = self[:statement_year]
     output          = "public/output/#{bank}_indoynab_#{SecureRandom.alphanumeric}.csv"
 
     case bank
@@ -16,7 +16,15 @@ class Converter < ApplicationRecord
       statement = BankCentralAsia.new(file, statement_year, output)
 
       statement.output_file
-      statement.bca_processing
+      statement.bca_processing_csv
+      statement.assign_payee
+      return statement.output_name
+
+    when "bca_pdf"
+      statement = BankCentralAsia.new(file, statement_year, output)
+
+      statement.output_file
+      statement.bca_processing_pdf
       statement.assign_payee
       return statement.output_name
 

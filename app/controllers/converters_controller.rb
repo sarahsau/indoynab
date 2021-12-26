@@ -32,7 +32,7 @@ class ConvertersController < ApplicationController
   private
 
   def converter_params
-    params.require(:converter).permit(:bank, :statement)
+    params.require(:converter).permit(:bank, :statement, :statement_year)
   end
 
   def format_ok?(statement_params)

@@ -10,7 +10,7 @@ class BankCentralAsia < BankAll
 		@output = output
 	end
 
-	def bca_processing
+	def bca_processing_csv
 		CSV.foreach(self.input, skip_lines:/Balance/, skip_blanks: true) do |row|
 
 			# Ignore four beginning and ending rows and also pending transactions.
@@ -53,4 +53,77 @@ class BankCentralAsia < BankAll
 			end
 		end
 	end
+
+	def bca_processing_pdf
+		File.open(self.input, 'rb') do |io|
+		  reader = PDF::Reader.new(io)
+		  pages = []
+
+		  # Parsing PDF
+		  reader.pages.each do |page|
+		    rows = []
+
+		    # Separating a whole text
+		    t = page.text.split("\n")
+
+		    t.each do |s|
+
+		      # Remove whitespace and empty cells
+		      ary = s.split("\s\s")
+
+					# delete empty rows
+					ary.each(&:strip!)
+					ary.delete_if { |str| str.nil? || str.empty? }
+
+					# Delete page headers
+					unless ary[0].nil?
+						ary.clear if ary[0].length != 5
+					end
+
+					# Delete saldo awal
+					ary.clear if ary[1] == "SALDO AWAL"
+
+					# delete extra rows
+					rows << ary if ary.any?
+		    end
+
+				pages << rows
+      end
+
+		  # Formatting to YNAB CSV format
+		    pages.each do |page|
+            page.each do |rows|
+
+					# delete saldo column and make debits negative
+					if rows[2].include? 'DB'
+						rows[3] = rows[2]
+						rows[2] = ''
+					end
+
+					rows.delete_at(-1) if rows.length > 4
+
+		      # Rearrange columns
+					payee_col = rows[2]
+					memo_col  = rows[1]
+
+		      rows[2] = memo_col
+		      rows[1] = payee_col
+
+		      # Make outflows negative.
+					if rows[3].include? "DB"
+						rows[3].prepend "-"
+						rows[3].chop!.chop!.chop!
+					end
+
+					# Add year
+					rows[0].concat('/', self.year)
+
+					# Insert transactions into the resulting CSV file.
+		      CSV.open(self.output, "a+") do |csv|
+		        csv << rows
+          end
+		    end
+		  end
+		end
+  end
 end

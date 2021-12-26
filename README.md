@@ -1,11 +1,15 @@
 # indoynab |  [sarahsau.github.io/indoynab](https://indoynab.herokuapp.com/)
 
-An online, no-fuss YNAB converter for your Indonesian bank statements.
-Currently covering: Bank Central Asia (BCA), Bank Negara Indonesia (BNI), BTPN Jenius.
+An online YNAB converter for your Indonesian bank statements.
+No installation required, no sign-up needed, no file stored.
+
+Currently covering:
+- Bank Central Asia (BCA) - CSV and PDF statements
+- Bank Negara Indonesia (BNI)
+- Bank Syariah Indonesia (BSI)
+- BTPN Jenius
 
 As easy as 123: Select Bank > Select Statement > Convert.
-No installation required, no credential needed, no file stored.
-
 
 ### My bank isn't in **indoynab** yet, can you include it?
 Yes! Post your request to [the discussion forum](https://github.com/sarahsau/indoynab/discussions/categories/adding-a-bank-request), attaching a sample of the bank's statement. Please sanitize any personal information such as real name and account number. For PDF statements, you can use free programs like [Sejda PDF editor](https://www.sejda.com/pdf-editor) to remove personal info beforehand.
@@ -22,3 +26,4 @@ If you program, you're welcome to create a pull request to add a new bank yourse
 - [Sarah S](https://github.com/sarahsau) - owner
 - [Keisuke Inaba](https://github.com/kei178) - pdf conversion gem
 - [Wesley Couch](https://github.com/wesmcouch) - csv conversion example
+-[Ragenrave](https://github.com/Ragenrave) - BSI and Jenius requester + tester
