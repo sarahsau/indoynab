@@ -69,7 +69,7 @@ class BankCentralAsia < BankAll
 		    t.each do |s|
 
 		      # Remove whitespace and empty cells
-		      ary = s.split("\s\s")
+		      ary = s.split("\s\s\s\s")
 
 					# delete empty rows
 					ary.each(&:strip!)
@@ -93,13 +93,17 @@ class BankCentralAsia < BankAll
 		  # Formatting to YNAB CSV format
 		    pages.each do |page|
             page.each do |rows|
+							#p rows
 
-					# delete saldo column and make debits negative
-					if rows[2].include? 'DB'
+					# uniform row length
+					rows.delete_at(-1) if rows[1] == "PAJAK BUNGA"
+
+					if rows.length < 4
 						rows[3] = rows[2]
 						rows[2] = ''
 					end
 
+					# delete saldo
 					rows.delete_at(-1) if rows.length > 4
 
 		      # Rearrange columns
@@ -110,10 +114,10 @@ class BankCentralAsia < BankAll
 		      rows[1] = payee_col
 
 		      # Make outflows negative.
-					if rows[3].include? "DB"
-						rows[3].prepend "-"
-						rows[3].chop!.chop!.chop!
-					end
+					 # if rows[3].include? "DB"
+					 # 	rows[3].prepend "-"
+					 # 	rows[3].chop!.chop!.chop!
+					 # end
 
 					# Add year
 					rows[0].concat('/', self.year)
