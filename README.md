@@ -11,6 +11,10 @@ Currently covering:
 
 As easy as 123: Select Bank > Select Statement > Convert.
 
+### Liking Indoynab? 
+<a href="https://www.buymeacoffee.com/sarahsau" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
+
+
 ### My bank isn't in **indoynab** yet, can you include it?
 Yes! Post your request to [the discussion forum](https://github.com/sarahsau/indoynab/discussions/categories/adding-a-bank-request), attaching a sample of the bank's statement. Please sanitize any personal information such as real name and account number. For PDF statements, you can use free programs like [Sejda PDF editor](https://www.sejda.com/pdf-editor) to remove personal info beforehand.
 
