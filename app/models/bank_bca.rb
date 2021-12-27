@@ -114,10 +114,10 @@ class BankCentralAsia < BankAll
 		      rows[1] = payee_col
 
 		      # Make outflows negative.
-					 # if rows[3].include? "DB"
-					 # 	rows[3].prepend "-"
-					 # 	rows[3].chop!.chop!.chop!
-					 # end
+					 if rows[3].include? "DB"
+					 	rows[3].prepend "-"
+					 	rows[3].chop!.chop!.chop!
+					 end
 
 					# Add year
 					rows[0].concat('/', self.year)
