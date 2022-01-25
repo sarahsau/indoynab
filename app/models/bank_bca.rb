@@ -23,7 +23,7 @@ class BankCentralAsia < BankAll
 
 			annoying_first_character = date.chr
 			date.delete!(annoying_first_character)
-			date_with_year = date.dup.insert(-1, '/' + self.year)
+			date_with_year = date.dup.insert(-1, '/' + self.year.to_s)
 
 			unless date_with_year == "/#{self.year}"
 				row[0] = date_with_year
@@ -93,20 +93,24 @@ class BankCentralAsia < BankAll
 		  # Formatting to YNAB CSV format
 		    pages.each do |page|
             page.each do |rows|
-							#p rows
 
 					# uniform row length
 					rows.delete_at(-1) if rows[1] == "PAJAK BUNGA"
 
+					if rows[3] != nil && rows[3].length == 4
+						rows.delete_at(3) if rows[3][0] == "0"
+					end
+
+					# add empty memo
 					if rows.length < 4
 						rows[3] = rows[2]
-						rows[2] = ''
+						rows[2] = 'NaN'
 					end
 
 					# delete saldo
 					rows.delete_at(-1) if rows.length > 4
 
-		      # Rearrange columns
+		      # swap memo with payee
 					payee_col = rows[2]
 					memo_col  = rows[1]
 

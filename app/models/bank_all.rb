@@ -62,7 +62,7 @@ class BankAll
 			end
 
 			# output to console
-			p row
+			# p row
 		end
 	end
 
